@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yusrasmarthotelwebsite 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yusrasmarthotelwebsite
+  template:
+    metadata:
+      labels:
+        app: yusrasmarthotelwebsite 
+    spec:
+      containers:
+        - name: yusrasmarthotelwebsite 
+          image: ynregistry.azurecr.io/yusrasmarthotelwebsite
+          ports:
+          - containerPort: 8080
